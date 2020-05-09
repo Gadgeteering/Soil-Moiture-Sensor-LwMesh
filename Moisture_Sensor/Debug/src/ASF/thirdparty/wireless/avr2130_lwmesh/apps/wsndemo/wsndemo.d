@@ -120,8 +120,11 @@ src/ASF/thirdparty/wireless/avr2130_lwmesh/apps/wsndemo/wsndemo.d \
  ../src/ASF/thirdparty/wireless/avr2130_lwmesh/source/nwk/inc/nwkSecurity.h \
  ../src/ASF/thirdparty/wireless/avr2130_lwmesh/source/nwk/inc/nwkDataReq.h \
  ../src/ASF/thirdparty/wireless/avr2130_lwmesh/source/sys/inc/sysTimer.h \
- ../src/ASF/thirdparty/wireless/avr2130_lwmesh/apps/wsndemo/commands.h \
- ../src/ASF/thirdparty/wireless/addons/sio2host/uart/sio2host.h \
+ ../src/ASF/thirdparty/wireless/services/sleep_mgr/sleep_mgr.h \
+ ../src/ASF/thirdparty/wireless/avr2130_lwmesh/apps/wsndemo/i2c.h \
+ ../src/ASF/sam0/drivers/sercom/i2c/i2c_master.h \
+ ../src/ASF/sam0/drivers/sercom/i2c/i2c_common.h \
+ ../src/ASF/sam0/drivers/sercom/sercom.h \
  ../src/ASF/sam0/drivers/system/system.h \
  ../src/ASF/sam0/drivers/system/clock/clock.h \
  ../src/ASF/sam0/drivers/system/clock/gclk.h \
@@ -129,28 +132,28 @@ src/ASF/thirdparty/wireless/avr2130_lwmesh/apps/wsndemo/wsndemo.d \
  ../src/ASF/sam0/drivers/system/pinmux/pinmux.h \
  ../src/ASF/sam0/drivers/system/power/power_sam_d_r_h/power.h \
  ../src/ASF/sam0/drivers/system/reset/reset_sam_d_r_h/reset.h \
- ../src/asf.h ../src/ASF/sam0/drivers/adc/adc.h \
- ../src/ASF/sam0/drivers/adc/adc_sam_d_r_h/adc_feature.h \
- ../src/ASF/common2/boards/user_board/user_board.h \
- ../src/config/conf_board.h ../src/ASF/common2/services/delay/delay.h \
+ ../src/ASF/sam0/drivers/system/interrupt/system_interrupt.h \
+ ../src/ASF/sam0/drivers/system/interrupt/system_interrupt_samr21/system_interrupt_features.h \
+ ../src/ASF/sam0/drivers/sercom/sercom_pinout.h \
+ ../src/ASF/thirdparty/wireless/avr2130_lwmesh/apps/wsndemo/HTU21D.h \
+ ../src/ASF/common2/services/delay/delay.h \
  ../src/ASF/common2/services/delay/sam0/systick_counter.h \
- ../src/ASF/sam0/drivers/extint/extint.h \
+ ../src/ASF/thirdparty/wireless/avr2130_lwmesh/apps/wsndemo/adc_sensors.h \
+ ../src/ASF/sam0/drivers/adc/adc.h \
+ ../src/ASF/sam0/drivers/adc/adc_sam_d_r_h/adc_feature.h \
+ ../src/ASF/thirdparty/wireless/avr2130_lwmesh/apps/wsndemo/commands.h \
+ ../src/asf.h ../src/ASF/common2/boards/user_board/user_board.h \
+ ../src/config/conf_board.h ../src/ASF/sam0/drivers/extint/extint.h \
  ../src/ASF/sam0/drivers/extint/extint_callback.h \
  ../src/ASF/sam0/drivers/extint/extint_callback.h \
  ../src/ASF/common/boards/board.h ../src/ASF/sam0/drivers/port/port.h \
  ../src/ASF/sam0/drivers/rtc/rtc_count.h ../src/config/conf_clocks.h \
- ../src/ASF/sam0/drivers/system/interrupt/system_interrupt.h \
- ../src/ASF/sam0/drivers/system/interrupt/system_interrupt_samr21/system_interrupt_features.h \
  ../src/ASF/sam0/drivers/rtc/rtc_count_interrupt.h \
  ../src/ASF/sam0/drivers/rtc/rtc_count.h \
  ../src/ASF/sam0/drivers/rtc/rtc_tamper.h \
  ../src/ASF/sam0/drivers/usb/stack_interface/usb_dual.h \
- ../src/ASF/sam0/drivers/sercom/sercom.h \
- ../src/ASF/sam0/drivers/sercom/sercom_pinout.h \
  ../src/ASF/sam0/drivers/sercom/sercom_interrupt.h \
  ../src/ASF/sam0/drivers/sercom/sercom.h \
- ../src/ASF/sam0/drivers/sercom/i2c/i2c_common.h \
- ../src/ASF/sam0/drivers/sercom/i2c/i2c_master.h \
  ../src/ASF/sam0/drivers/sercom/i2c/i2c_common.h \
  ../src/ASF/sam0/drivers/sercom/spi/spi.h ../src/config/conf_spi.h \
  ../src/ASF/sam0/drivers/sercom/spi/spi_interrupt.h \
@@ -179,6 +182,7 @@ src/ASF/thirdparty/wireless/avr2130_lwmesh/apps/wsndemo/wsndemo.d \
  ../src/ASF/common/services/usb/udc/udi.h \
  ../src/ASF/common/services/usb/udc/udc_desc.h \
  ../src/ASF/common/services/usb/udc/udi.h \
+ ../src/ASF/common/utils/stdio/stdio_usb/stdio_usb.h \
  ../src/ASF/common/services/usb/udc/udc.h \
  ../src/ASF/common/services/usb/udc/udd.h \
  ../src/ASF/thirdparty/wireless/avr2130_lwmesh/apps/wsndemo/wsndemo.h
@@ -423,9 +427,15 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\lib\gc
 
 ../src/ASF/thirdparty/wireless/avr2130_lwmesh/source/sys/inc/sysTimer.h:
 
-../src/ASF/thirdparty/wireless/avr2130_lwmesh/apps/wsndemo/commands.h:
+../src/ASF/thirdparty/wireless/services/sleep_mgr/sleep_mgr.h:
 
-../src/ASF/thirdparty/wireless/addons/sio2host/uart/sio2host.h:
+../src/ASF/thirdparty/wireless/avr2130_lwmesh/apps/wsndemo/i2c.h:
+
+../src/ASF/sam0/drivers/sercom/i2c/i2c_master.h:
+
+../src/ASF/sam0/drivers/sercom/i2c/i2c_common.h:
+
+../src/ASF/sam0/drivers/sercom/sercom.h:
 
 ../src/ASF/sam0/drivers/system/system.h:
 
@@ -441,19 +451,31 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\lib\gc
 
 ../src/ASF/sam0/drivers/system/reset/reset_sam_d_r_h/reset.h:
 
-../src/asf.h:
+../src/ASF/sam0/drivers/system/interrupt/system_interrupt.h:
+
+../src/ASF/sam0/drivers/system/interrupt/system_interrupt_samr21/system_interrupt_features.h:
+
+../src/ASF/sam0/drivers/sercom/sercom_pinout.h:
+
+../src/ASF/thirdparty/wireless/avr2130_lwmesh/apps/wsndemo/HTU21D.h:
+
+../src/ASF/common2/services/delay/delay.h:
+
+../src/ASF/common2/services/delay/sam0/systick_counter.h:
+
+../src/ASF/thirdparty/wireless/avr2130_lwmesh/apps/wsndemo/adc_sensors.h:
 
 ../src/ASF/sam0/drivers/adc/adc.h:
 
 ../src/ASF/sam0/drivers/adc/adc_sam_d_r_h/adc_feature.h:
 
+../src/ASF/thirdparty/wireless/avr2130_lwmesh/apps/wsndemo/commands.h:
+
+../src/asf.h:
+
 ../src/ASF/common2/boards/user_board/user_board.h:
 
 ../src/config/conf_board.h:
-
-../src/ASF/common2/services/delay/delay.h:
-
-../src/ASF/common2/services/delay/sam0/systick_counter.h:
 
 ../src/ASF/sam0/drivers/extint/extint.h:
 
@@ -469,10 +491,6 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\lib\gc
 
 ../src/config/conf_clocks.h:
 
-../src/ASF/sam0/drivers/system/interrupt/system_interrupt.h:
-
-../src/ASF/sam0/drivers/system/interrupt/system_interrupt_samr21/system_interrupt_features.h:
-
 ../src/ASF/sam0/drivers/rtc/rtc_count_interrupt.h:
 
 ../src/ASF/sam0/drivers/rtc/rtc_count.h:
@@ -481,17 +499,9 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\lib\gc
 
 ../src/ASF/sam0/drivers/usb/stack_interface/usb_dual.h:
 
-../src/ASF/sam0/drivers/sercom/sercom.h:
-
-../src/ASF/sam0/drivers/sercom/sercom_pinout.h:
-
 ../src/ASF/sam0/drivers/sercom/sercom_interrupt.h:
 
 ../src/ASF/sam0/drivers/sercom/sercom.h:
-
-../src/ASF/sam0/drivers/sercom/i2c/i2c_common.h:
-
-../src/ASF/sam0/drivers/sercom/i2c/i2c_master.h:
 
 ../src/ASF/sam0/drivers/sercom/i2c/i2c_common.h:
 
@@ -552,6 +562,8 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\lib\gc
 ../src/ASF/common/services/usb/udc/udc_desc.h:
 
 ../src/ASF/common/services/usb/udc/udi.h:
+
+../src/ASF/common/utils/stdio/stdio_usb/stdio_usb.h:
 
 ../src/ASF/common/services/usb/udc/udc.h:
 

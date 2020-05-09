@@ -181,6 +181,7 @@ src/ASF/thirdparty/wireless/avr2130_lwmesh/source/sys/src/sys.d \
  ../src/ASF/common/services/usb/udc/udi.h \
  ../src/ASF/common/services/usb/udc/udc_desc.h \
  ../src/ASF/common/services/usb/udc/udi.h \
+ ../src/ASF/common/utils/stdio/stdio_usb/stdio_usb.h \
  ../src/ASF/common/services/usb/udc/udc.h \
  ../src/ASF/common/services/usb/udc/udd.h
 
@@ -555,6 +556,8 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 ../src/ASF/common/services/usb/udc/udc_desc.h:
 
 ../src/ASF/common/services/usb/udc/udi.h:
+
+../src/ASF/common/utils/stdio/stdio_usb/stdio_usb.h:
 
 ../src/ASF/common/services/usb/udc/udc.h:
 

@@ -81,10 +81,15 @@
 #if APP_ENDDEVICE
 #include "sleep_mgr.h"
 #include "i2c.h"
+// HTU21D Humidity Sensor
+#include "HTU21D.h"
+#include "adc_sensors.h"
+
 #endif
 #include "commands.h"
 #if APP_COORDINATOR
 #include "sio2host.h"
+#include "stdio_usb.h"
 #endif
 #if SAMD || SAMR21 || SAML21
 #include "system.h"
@@ -309,10 +314,14 @@ static void appSendData(void)
 #else
 	appMsg.parentShortAddr = 0;
 #endif
-
+	
+    float temp = HTU21D_readTemperature();
+	float humid = HTU21D_readHumidity();
+	
 	appMsg.sensors.battery     = rand() & 0xffff;
-	appMsg.sensors.temperature = rand() & 0x7f;
+	appMsg.sensors.temperature = temp;
 	appMsg.sensors.light       = rand() & 0xff;
+	appMsg.sensors.humidity	   = humid;
 
 
 #if APP_COORDINATOR
@@ -487,8 +496,12 @@ void wsndemo_init(void)
 	SYS_Init();
 #if APP_ENDDEVICE
 	sm_init();
+	configure_adc_averaging();
+	i2c_init();
+	HTU21D_Init();
 #endif
 #if APP_COORDINATOR
+	//stdio_usb_init(void)
 	sio2host_init();
 #endif
 }

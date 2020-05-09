@@ -80,8 +80,8 @@
 
 /* SYSTEM_CLOCK_SOURCE_DFLL configuration - Digital Frequency Locked Loop */
 #  define CONF_CLOCK_DFLL_ENABLE                  false
-#  define CONF_CLOCK_DFLL_LOOP_MODE               SYSTEM_CLOCK_DFLL_LOOP_MODE_CLOSED
-#  define CONF_CLOCK_DFLL_ON_DEMAND               false
+#  define CONF_CLOCK_DFLL_LOOP_MODE               SYSTEM_CLOCK_DFLL_LOOP_MODE_USB_RECOVERY
+#  define CONF_CLOCK_DFLL_ON_DEMAND               true
 
 /* DFLL open loop mode configuration */
 #  define CONF_CLOCK_DFLL_FINE_VALUE              (512)
@@ -105,7 +105,7 @@
 #  define CONF_CLOCK_DPLL_LOW_POWER_ENABLE        false
 
 #  define CONF_CLOCK_DPLL_LOCK_TIME               SYSTEM_CLOCK_SOURCE_DPLL_LOCK_TIME_DEFAULT
-#  define CONF_CLOCK_DPLL_REFERENCE_CLOCK         SYSTEM_CLOCK_SOURCE_DPLL_REFERENCE_CLOCK_XOSC32K
+#  define CONF_CLOCK_DPLL_REFERENCE_CLOCK         SYSTEM_CLOCK_SOURCE_DPLL_REFERENCE_CLOCK_XOSC
 #  define CONF_CLOCK_DPLL_FILTER                  SYSTEM_CLOCK_SOURCE_DPLL_FILTER_DEFAULT
 
 #  define CONF_CLOCK_DPLL_REFERENCE_FREQUENCY     12000000
@@ -125,15 +125,15 @@
 #  define CONF_CLOCK_GCLK_0_ENABLE                true
 #  define CONF_CLOCK_GCLK_0_RUN_IN_STANDBY        false
 #  define CONF_CLOCK_GCLK_0_CLOCK_SOURCE          SYSTEM_CLOCK_SOURCE_OSC8M
-#  define CONF_CLOCK_GCLK_0_PRESCALER             16 //Set for 500Khz for Soil Moisture Sensor
+#  define CONF_CLOCK_GCLK_0_PRESCALER             1//16 //Set for 500Khz for Soil Moisture Sensor
 #  define CONF_CLOCK_GCLK_0_OUTPUT_ENABLE         true
 
 /* Configure GCLK generator 1 */
-#  define CONF_CLOCK_GCLK_1_ENABLE                false
+#  define CONF_CLOCK_GCLK_1_ENABLE                true //Used by ADC
 #  define CONF_CLOCK_GCLK_1_RUN_IN_STANDBY        false
-#  define CONF_CLOCK_GCLK_1_CLOCK_SOURCE          SYSTEM_CLOCK_SOURCE_XOSC
+#  define CONF_CLOCK_GCLK_1_CLOCK_SOURCE          SYSTEM_CLOCK_SOURCE_OSC8M
 #  define CONF_CLOCK_GCLK_1_PRESCALER             1
-#  define CONF_CLOCK_GCLK_1_OUTPUT_ENABLE         false
+#  define CONF_CLOCK_GCLK_1_OUTPUT_ENABLE         true
 
 /* Configure GCLK generator 2 (RTC) */
 #  define CONF_CLOCK_GCLK_2_ENABLE                false

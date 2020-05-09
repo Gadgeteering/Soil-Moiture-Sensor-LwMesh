@@ -2,8 +2,6 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
-src\app\i2c.c
-
 src\ASF\common\services\sleepmgr\samd\sleepmgr.c
 
 src\ASF\common\services\usb\class\cdc\device\udi_cdc.c
@@ -11,6 +9,8 @@ src\ASF\common\services\usb\class\cdc\device\udi_cdc.c
 src\ASF\common\services\usb\class\cdc\device\udi_cdc_desc.c
 
 src\ASF\common\services\usb\udc\udc.c
+
+src\ASF\common\utils\stdio\stdio_usb\stdio_usb.c
 
 src\ASF\sam0\drivers\adc\adc_sam_d_r_h\adc.c
 
@@ -35,6 +35,12 @@ src\ASF\sam0\utils\stdio\read.c
 src\ASF\sam0\utils\stdio\write.c
 
 src\ASF\thirdparty\wireless\addons\sio2host\uart\sio2host.c
+
+src\ASF\thirdparty\wireless\avr2130_lwmesh\apps\wsndemo\adc_sensors.c
+
+src\ASF\thirdparty\wireless\avr2130_lwmesh\apps\wsndemo\HTU21D.c
+
+src\ASF\thirdparty\wireless\avr2130_lwmesh\apps\wsndemo\i2c.c
 
 src\ASF\thirdparty\wireless\services\sleep_mgr\sam0\sleep_mgr.c
 
