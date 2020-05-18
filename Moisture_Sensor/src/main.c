@@ -37,12 +37,7 @@ int main (void)
 {
 	/* Configure device and enable. */
 	system_init();
-	struct system_pinmux_config config_pinmux;
-	system_pinmux_get_config_defaults(&config_pinmux);
-	config_pinmux.mux_position =PINMUX_PA27H_GCLK_IO0;
-	config_pinmux.direction = SYSTEM_PINMUX_PIN_DIR_OUTPUT;
-	system_pinmux_pin_set_config(PIN_PA27,&config_pinmux);
-	
+
 	delay_init();	
 	
 	//stdio_usb_init();

@@ -2,7 +2,7 @@ src/ASF/sam0/utils/cmsis/samr21/source/gcc/startup_samr21.d \
  src/ASF/sam0/utils/cmsis/samr21/source/gcc/startup_samr21.o: \
  ../src/ASF/sam0/utils/cmsis/samr21/source/gcc/startup_samr21.c \
  ../src/ASF/sam0/utils/cmsis/samr21/include/samr21.h \
- ../src/ASF/sam0/utils/cmsis/samr21/include/samr21e16a.h \
+ ../src/ASF/sam0/utils/cmsis/samr21/include/samr21e18a.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\lib\gcc\arm-none-eabi\5.3.1\include\stdint.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\stdint.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\machine\_default_types.h \
@@ -68,11 +68,11 @@ src/ASF/sam0/utils/cmsis/samr21/source/gcc/startup_samr21.d \
  ../src/ASF/sam0/utils/cmsis/samr21/include/instance/tcc2.h \
  ../src/ASF/sam0/utils/cmsis/samr21/include/instance/usb.h \
  ../src/ASF/sam0/utils/cmsis/samr21/include/instance/wdt.h \
- ../src/ASF/sam0/utils/cmsis/samr21/include/pio/samr21e16a.h
+ ../src/ASF/sam0/utils/cmsis/samr21/include/pio/samr21e18a.h
 
 ../src/ASF/sam0/utils/cmsis/samr21/include/samr21.h:
 
-../src/ASF/sam0/utils/cmsis/samr21/include/samr21e16a.h:
+../src/ASF/sam0/utils/cmsis/samr21/include/samr21e18a.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\lib\gcc\arm-none-eabi\5.3.1\include\stdint.h:
 
@@ -204,4 +204,4 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 
 ../src/ASF/sam0/utils/cmsis/samr21/include/instance/wdt.h:
 
-../src/ASF/sam0/utils/cmsis/samr21/include/pio/samr21e16a.h:
+../src/ASF/sam0/utils/cmsis/samr21/include/pio/samr21e18a.h:

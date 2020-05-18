@@ -46,13 +46,13 @@ void system_board_init(void);
 #define BOARD_OSC_STARTUP_US      15625
 ///** @} */
 //
-///** \name LED0 definitions
- //*  @{ */
-//#define LED0_PIN                  PIN_PA19
-//#define LED0_ACTIVE               false
-//#define LED0_INACTIVE             !LED0_ACTIVE
-//#define LED0 LED0_PIN
-///** @} */
+/** \name LED0 definitions
+ *  @{ */
+#define LED0_PIN                  PIN_PA19
+#define LED0_ACTIVE               false
+#define LED0_INACTIVE             !LED0_ACTIVE
+#define LED0 LED0_PIN
+/** @} */
 //
 ///** \name SW0 definitions
  //*  @{ */
@@ -72,11 +72,11 @@ void system_board_init(void);
  //* boards.
  //*
  //*  @{ */
-//#define LED_0_NAME                "LED0 (yellow)"
-//#define LED_0_PIN                 LED0_PIN
-//#define LED_0_ACTIVE              LED0_ACTIVE
-//#define LED_0_INACTIVE            LED0_INACTIVE
-//#define LED0_GPIO                 LED0_PIN
+#define LED_0_NAME                "LED0 (yellow)"
+#define LED_0_PIN                 LED0_PIN
+#define LED_0_ACTIVE              LED0_ACTIVE
+#define LED_0_INACTIVE            LED0_INACTIVE
+#define LED0_GPIO                 LED0_PIN
 //
 //#define LED_0_PWM_MODULE          TC3
 //#define LED_0_PWM_CHANNEL         1
@@ -94,7 +94,7 @@ void system_board_init(void);
 ///** @} */
 //
 ///** Number of on-board LEDs */
-//#define LED_COUNT                 1
+#define LED_COUNT                 1
 //
 //
 ///**

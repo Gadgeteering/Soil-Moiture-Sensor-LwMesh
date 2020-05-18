@@ -43,13 +43,13 @@ void HTU21D_reset(void) {
 }
 
 
-void HTU21D_Init(void) {
+int8_t HTU21D_Init(void) {
  
   HTU21D_reset();
- // i2c_write_reg(HTU21DF_I2CADDR,HTU21DF_READREG,1);
- // delay_ms(10);
- // return  (i2c_read_reg(HTU21DF_I2CADDR,HTU21DF_READREG,1) == 0x2);
-  
+  i2c_write(HTU21DF_I2CADDR,HTU21DF_READREG,1);
+  delay_ms(10);
+  uint8_t count =i2c_read(HTU21DF_I2CADDR,i2c_read_buffer,1);
+  if (i2c_read_buffer[0] == 0x02) return true; else return false;
    // after reset should be 0x2
 }
 

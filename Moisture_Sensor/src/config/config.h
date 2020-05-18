@@ -42,6 +42,8 @@
 
 /*****************************************************************************
 *****************************************************************************/
+
+
 #define APP_ADDR                0x8001
 #define APP_PANID               0x1234
 #define APP_SENDING_INTERVAL    2000
@@ -92,6 +94,7 @@
 #define APP_COORDINATOR 0
 #define APP_ROUTER      0
 #define APP_ENDDEVICE   1
+#define HTU21D_Enable   1
 #endif
 
 #endif /* _CONFIG_H_ */

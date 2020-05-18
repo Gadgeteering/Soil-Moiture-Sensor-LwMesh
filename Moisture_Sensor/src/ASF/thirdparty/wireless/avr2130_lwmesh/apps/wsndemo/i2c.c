@@ -52,11 +52,11 @@ while (i2c_master_write_packet_wait(&i2c_master_instance, &packet) !=
 STATUS_OK) {
 /* Increment timeout counter and check if timed out. */
 if (timeout++ == TIMEOUT) {
-printf("i2c failed");
+return false;
 break;
 }
 }
-	
+return true;	
 }
 
 uint8_t i2c_read(uint8_t Addr,uint8_t *read_buffer,uint8_t length)

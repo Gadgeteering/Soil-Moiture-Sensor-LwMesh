@@ -80,9 +80,11 @@
 #include "sysTimer.h"
 #if APP_ENDDEVICE
 #include "sleep_mgr.h"
+#if HTU21D_Enable
 #include "i2c.h"
 // HTU21D Humidity Sensor
 #include "HTU21D.h"
+#endif
 #include "adc_sensors.h"
 
 #endif
@@ -103,6 +105,7 @@
 #include "board.h"
 #include "wsndemo.h"
 
+uint8_t HTU21D_Valid;
 /*****************************************************************************
 *****************************************************************************/
 
@@ -314,14 +317,28 @@ static void appSendData(void)
 #else
 	appMsg.parentShortAddr = 0;
 #endif
-	
+#if APP_ENDDEVICE
+
+	if (HTU21D_Valid){
     float temp = HTU21D_readTemperature();
 	float humid = HTU21D_readHumidity();
-	
-	appMsg.sensors.battery     = rand() & 0xffff;
 	appMsg.sensors.temperature = temp;
-	appMsg.sensors.light       = rand() & 0xff;
 	appMsg.sensors.humidity	   = humid;
+	}
+	
+else
+	{appMsg.sensors.temperature = rand() & 0xffff;
+	appMsg.sensors.humidity	   = rand() & 0xffff;
+	}
+	//uint16_t battery =  bat_adc_read();
+	//appMsg.sensors.battery     = battery;//rand() & 0xffff;
+	//appMsg.sensors.light       = rand() & 0xff;
+	
+	uint16_t moisture =moist_adc_read();
+	appMsg.sensors.moisture =moisture;
+	
+	
+#endif
 
 
 #if APP_COORDINATOR
@@ -366,6 +383,8 @@ static void appInit(void)
 	appMsg.sensors.battery     = 0;
 	appMsg.sensors.temperature = 0;
 	appMsg.sensors.light       = 0;
+	appMsg.sensors.humidity		= 0;
+	appMsg.sensors.moisture      = 0;
 
 	appMsg.caption.type         = 32;
 	appMsg.caption.size         = APP_CAPTION_SIZE;
@@ -497,8 +516,11 @@ void wsndemo_init(void)
 #if APP_ENDDEVICE
 	sm_init();
 	configure_adc_averaging();
-	i2c_init();
-	HTU21D_Init();
+#if HTU21D_Enable
+	i2c_init(); //comment out during debug of adc
+	HTU21D_Valid=HTU21D_Init();
+#endif // HTU21D
+
 #endif
 #if APP_COORDINATOR
 	//stdio_usb_init(void)

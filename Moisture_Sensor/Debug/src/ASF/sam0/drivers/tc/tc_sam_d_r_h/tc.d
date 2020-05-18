@@ -20,7 +20,7 @@ src/ASF/sam0/drivers/tc/tc_sam_d_r_h/tc.d \
  ../src/ASF/sam0/utils/header_files/io.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\lib\gcc\arm-none-eabi\5.3.1\include\stdbool.h \
  ../src/ASF/sam0/utils/cmsis/samr21/include/samr21.h \
- ../src/ASF/sam0/utils/cmsis/samr21/include/samr21e16a.h \
+ ../src/ASF/sam0/utils/cmsis/samr21/include/samr21e18a.h \
  ../src/ASF/thirdparty/CMSIS/Include/core_cm0plus.h \
  ../src/ASF/thirdparty/CMSIS/Include/cmsis_version.h \
  ../src/ASF/thirdparty/CMSIS/Include/cmsis_compiler.h \
@@ -79,7 +79,7 @@ src/ASF/sam0/drivers/tc/tc_sam_d_r_h/tc.d \
  ../src/ASF/sam0/utils/cmsis/samr21/include/instance/tcc2.h \
  ../src/ASF/sam0/utils/cmsis/samr21/include/instance/usb.h \
  ../src/ASF/sam0/utils/cmsis/samr21/include/instance/wdt.h \
- ../src/ASF/sam0/utils/cmsis/samr21/include/pio/samr21e16a.h \
+ ../src/ASF/sam0/utils/cmsis/samr21/include/pio/samr21e18a.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\stdio.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\_ansi.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\newlib.h \
@@ -156,7 +156,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\lib\gc
 
 ../src/ASF/sam0/utils/cmsis/samr21/include/samr21.h:
 
-../src/ASF/sam0/utils/cmsis/samr21/include/samr21e16a.h:
+../src/ASF/sam0/utils/cmsis/samr21/include/samr21e18a.h:
 
 ../src/ASF/thirdparty/CMSIS/Include/core_cm0plus.h:
 
@@ -274,7 +274,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\lib\gc
 
 ../src/ASF/sam0/utils/cmsis/samr21/include/instance/wdt.h:
 
-../src/ASF/sam0/utils/cmsis/samr21/include/pio/samr21e16a.h:
+../src/ASF/sam0/utils/cmsis/samr21/include/pio/samr21e18a.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\stdio.h:
 

@@ -20,7 +20,7 @@
 #include <delay.h>
 #include "i2c.h"
 
-void HTU21D_Init(void);
+int8_t HTU21D_Init(void);
 void HTU21D_reset (void);
 float HTU21D_readTemperature(void);
 float HTU21D_readHumidity(void);

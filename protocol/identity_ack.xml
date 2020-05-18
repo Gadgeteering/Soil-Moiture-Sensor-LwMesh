@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!-- Command specification -->
+<struct>
+	<const name="MessageType" type="uint8">0x11</const>
+	<value name="IdentityStatus" type="uint8"/>
+	<value name="FullAddress" type="uint64" />
+</struct>

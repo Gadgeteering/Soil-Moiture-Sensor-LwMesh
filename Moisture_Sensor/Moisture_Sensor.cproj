@@ -5,7 +5,7 @@
     <ProjectVersion>7.0</ProjectVersion>
     <ToolchainName>com.Atmel.ARMGCC.C</ToolchainName>
     <ProjectGuid>dce6c7e3-ee26-4d79-826b-08594b9ad897</ProjectGuid>
-    <avrdevice>ATSAMR21E16A</avrdevice>
+    <avrdevice>ATSAMR21E18A</avrdevice>
     <avrdeviceseries>samr21</avrdeviceseries>
     <OutputType>Executable</OutputType>
     <Language>C</Language>
@@ -312,7 +312,7 @@
     </AsfFrameworkConfig>
     <avrtool>com.atmel.avrdbg.tool.samice</avrtool>
     <avrtoolserialnumber>4294967295</avrtoolserialnumber>
-    <avrdeviceexpectedsignature>0x1001031E</avrdeviceexpectedsignature>
+    <avrdeviceexpectedsignature>0x1001031C</avrdeviceexpectedsignature>
     <avrtoolinterface>SWD</avrtoolinterface>
     <com_atmel_avrdbg_tool_samice>
       <ToolOptions>

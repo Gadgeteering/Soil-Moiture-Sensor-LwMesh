@@ -54,7 +54,7 @@ src/ASF/thirdparty/wireless/avr2130_lwmesh/apps/wsndemo/wsndemo.d \
  ../src/ASF/sam0/utils/preprocessor/mrecursion.h \
  ../src/ASF/sam0/utils/header_files/io.h \
  ../src/ASF/sam0/utils/cmsis/samr21/include/samr21.h \
- ../src/ASF/sam0/utils/cmsis/samr21/include/samr21e16a.h \
+ ../src/ASF/sam0/utils/cmsis/samr21/include/samr21e18a.h \
  ../src/ASF/thirdparty/CMSIS/Include/core_cm0plus.h \
  ../src/ASF/thirdparty/CMSIS/Include/cmsis_version.h \
  ../src/ASF/thirdparty/CMSIS/Include/cmsis_compiler.h \
@@ -113,7 +113,7 @@ src/ASF/thirdparty/wireless/avr2130_lwmesh/apps/wsndemo/wsndemo.d \
  ../src/ASF/sam0/utils/cmsis/samr21/include/instance/tcc2.h \
  ../src/ASF/sam0/utils/cmsis/samr21/include/instance/usb.h \
  ../src/ASF/sam0/utils/cmsis/samr21/include/instance/wdt.h \
- ../src/ASF/sam0/utils/cmsis/samr21/include/pio/samr21e16a.h \
+ ../src/ASF/sam0/utils/cmsis/samr21/include/pio/samr21e18a.h \
  ../src/ASF/common/utils/interrupt.h \
  ../src/ASF/common/utils/interrupt/interrupt_sam_nvic.h \
  ../src/ASF/thirdparty/wireless/avr2130_lwmesh/source/nwk/inc/nwkGroup.h \
@@ -295,7 +295,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\lib\gc
 
 ../src/ASF/sam0/utils/cmsis/samr21/include/samr21.h:
 
-../src/ASF/sam0/utils/cmsis/samr21/include/samr21e16a.h:
+../src/ASF/sam0/utils/cmsis/samr21/include/samr21e18a.h:
 
 ../src/ASF/thirdparty/CMSIS/Include/core_cm0plus.h:
 
@@ -413,7 +413,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\lib\gc
 
 ../src/ASF/sam0/utils/cmsis/samr21/include/instance/wdt.h:
 
-../src/ASF/sam0/utils/cmsis/samr21/include/pio/samr21e16a.h:
+../src/ASF/sam0/utils/cmsis/samr21/include/pio/samr21e18a.h:
 
 ../src/ASF/common/utils/interrupt.h:
 
