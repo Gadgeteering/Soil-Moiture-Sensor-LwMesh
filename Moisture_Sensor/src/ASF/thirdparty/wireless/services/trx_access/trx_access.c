@@ -102,6 +102,7 @@ void trx_spi_init(void)
 	config.pinmux_pad1 = AT86RFX_SPI_SERCOM_PINMUX_PAD1;
 	config.pinmux_pad2 = AT86RFX_SPI_SERCOM_PINMUX_PAD2;
 	config.pinmux_pad3 = AT86RFX_SPI_SERCOM_PINMUX_PAD3;
+	config.generator_source = GCLK_GENERATOR_3;
 	spi_init(&master, AT86RFX_SPI, &config);
 	spi_enable(&master);
 

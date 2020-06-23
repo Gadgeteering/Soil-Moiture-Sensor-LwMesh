@@ -30,8 +30,9 @@ void i2c_init(void){
 	//port_pin_set_output_level(PIN_PA08, true);
 	//port_pin_set_output_level(PIN_PA08, false);
 	i2c_master_get_config_defaults(&config_i2c_master);
-	config_i2c_master.buffer_timeout =10000;
-	config_i2c_master.generator_source = GCLK_GENERATOR_1;
+	config_i2c_master.buffer_timeout =1000;
+	config_i2c_master.baud_rate = 1000;
+	config_i2c_master.generator_source = GCLK_GENERATOR_4;
 	config_i2c_master.pinmux_pad0=PINMUX_PA08C_SERCOM0_PAD0;
 	config_i2c_master.pinmux_pad1=PINMUX_PA09C_SERCOM0_PAD1;
 	/* Initialize and enable device with config. */

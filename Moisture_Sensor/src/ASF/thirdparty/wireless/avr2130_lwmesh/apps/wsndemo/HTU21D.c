@@ -39,18 +39,31 @@ static uint8_t i2c_read_buffer[10];
  */
 void HTU21D_reset(void) {
   i2c_write(HTU21DF_I2CADDR,HTU21DF_RESET,1);
-  delay_ms(15);
+  delay_ms(300);
 }
 
 
 int8_t HTU21D_Init(void) {
- 
+int8_t tries =0;
+
+  while(tries != 5){
   HTU21D_reset();
+   i2c_write(HTU21DF_I2CADDR,HTU21DF_CHIPID,1);
+  delay_ms(10);
+  uint8_t ID =i2c_read(HTU21DF_I2CADDR,i2c_read_buffer,1);
   i2c_write(HTU21DF_I2CADDR,HTU21DF_READREG,1);
   delay_ms(10);
   uint8_t count =i2c_read(HTU21DF_I2CADDR,i2c_read_buffer,1);
-  if (i2c_read_buffer[0] == 0x02) return true; else return false;
+  if (i2c_read_buffer[0] == 0x02)
+  {
+	 return true; 
+	 break;
+  } 
+  
+  if (tries == 5) return false;
    // after reset should be 0x2
+   tries ++;
+  }
 }
 
 

@@ -42,6 +42,9 @@ float HTU21D_readHumidity(void);
 /** Reset command. */
 #define HTU21DF_RESET (0xFE)
 
+/** CHIP ID**/
+#define HTU21DF_CHIPID (0x32)
+
 
 #endif 
 

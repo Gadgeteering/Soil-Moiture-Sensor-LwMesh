@@ -41,25 +41,41 @@
 #define WSNDEMO_H
 
 # include "board.h"
+# include "user_board.h"
 
 void wsndemo_init(void);
 void wsndemo_task(void);
+
+typedef enum AppState_t {
+	APP_STATE_INITIAL,
+	APP_STATE_SEND,
+	APP_STATE_WAIT_CONF,
+	APP_STATE_SENDING_DONE,
+	APP_STATE_WAIT_SEND_TIMER,
+	APP_STATE_WAIT_COMMAND_TIMER,
+	APP_STATE_PREPARE_TO_SLEEP,
+	APP_STATE_SLEEP,
+	APP_STATE_WAKEUP,
+} AppState_t;
+
+/*- Variables --------------------------------------------------------------*/
+static AppState_t appState = APP_STATE_INITIAL;
 
 #ifndef LED_COUNT
 #define LED_COUNT 0
 #endif
 
-#if LED_COUNT > 2
+#if (LED_COUNT > 2)
 #define LED_NETWORK       LED0_GPIO
 #define LED_DATA          LED1_GPIO
 #define LED_BLINK         LED2_GPIO
 #define LED_IDENTIFY      LED0_GPIO
-#elif LED_COUNT == 2
+#elif (LED_COUNT == 2)
 #define LED_NETWORK       LED0_GPIO
 #define LED_DATA          LED1_GPIO
 #define LED_BLINK         LED1_GPIO
 #define LED_IDENTIFY      LED0_GPIO
-#elif LED_COUNT == 1
+#elif (LED_COUNT == 1)
 #define LED_NETWORK       LED0_GPIO
 #define LED_DATA          LED0_GPIO
 #define LED_BLINK         LED0_GPIO

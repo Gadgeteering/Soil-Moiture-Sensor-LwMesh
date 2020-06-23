@@ -22,6 +22,12 @@
 		        <mathfield name="Battery" type="uint32" convert="x/1000"/>
 		        <value name="Temperature" type="int32"/>
          		<value name="Light" type="int32"/>
+          </case>
+		  <case value="0x02">
+		        <value name="ParamLength" type="uint8" hidden="true"/>
+		        <mathfield name="Battery" type="uint32" convert="x/1000"/>
+		        <value name="Temperature" type="int32"/>
+         		<value name="Light" type="int32"/>
 				<value name="Moisture" type="int32"/>
 				<value name="Humidity" type="int32"/>
 				 

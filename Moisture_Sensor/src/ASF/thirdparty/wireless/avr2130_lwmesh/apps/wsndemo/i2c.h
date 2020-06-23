@@ -7,7 +7,7 @@
 void i2c_init(void);
 uint8_t i2c_read(uint8_t Addr,uint8_t *read_buffer, uint8_t length);
 void i2c_write(uint8_t Addr, uint8_t Reg,uint8_t length);
-#define TIMEOUT 100
+#define TIMEOUT 500
 #define DATA_LENGTH 8
 
 struct i2c_master_config config_i2c_master;

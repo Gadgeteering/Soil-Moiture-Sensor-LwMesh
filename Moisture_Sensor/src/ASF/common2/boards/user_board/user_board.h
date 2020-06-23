@@ -49,9 +49,9 @@ void system_board_init(void);
 /** \name LED0 definitions
  *  @{ */
 #define LED0_PIN                  PIN_PA19
-#define LED0_ACTIVE               false
+#define LED0_ACTIVE               true
 #define LED0_INACTIVE             !LED0_ACTIVE
-#define LED0 LED0_PIN
+#define LED0					  LED0_PIN
 /** @} */
 //
 ///** \name SW0 definitions
@@ -260,27 +260,27 @@ void system_board_init(void);
 /** \name Extension header #3 pin definitions
  *  @{
  */
-#define EXT3_PIN_5                PIN_PA15
-#define EXT3_PIN_10               PIN_PA08
-#define EXT3_PIN_11               PIN_PA16
-#define EXT3_PIN_12               PIN_PA17
-#define EXT3_PIN_15               PIN_PA14
-#define EXT3_PIN_16               PIN_PB22
-#define EXT3_PIN_17               PIN_PB02
-#define EXT3_PIN_18               PIN_PB23
+//#define EXT3_PIN_5                PIN_PA15
+//#define EXT3_PIN_10               PIN_PA08
+//#define EXT3_PIN_11               PIN_PA16
+//#define EXT3_PIN_12               PIN_PA17
+//#define EXT3_PIN_15               PIN_PA14
+//#define EXT3_PIN_16               PIN_PB22
+//#define EXT3_PIN_17               PIN_PB02
+//#define EXT3_PIN_18               PIN_PB23
 /** @} */
 
 /** \name Extension header #3 pin definitions by function
  *  @{
  */
-#define EXT3_PIN_GPIO_0           EXT3_PIN_5
-#define EXT3_PIN_GPIO_1           EXT3_PIN_10
-#define EXT3_PIN_I2C_SDA          EXT3_PIN_11
-#define EXT3_PIN_I2C_SCL          EXT3_PIN_12
-#define EXT3_PIN_GPIO_2           EXT3_PIN_15
-#define EXT3_PIN_SPI_MOSI         EXT3_PIN_16
-#define EXT3_PIN_SPI_MISO         EXT3_PIN_17
-#define EXT3_PIN_SPI_SCK          EXT3_PIN_18
+//#define EXT3_PIN_GPIO_0           EXT3_PIN_5
+//#define EXT3_PIN_GPIO_1           EXT3_PIN_10
+//#define EXT3_PIN_I2C_SDA          EXT3_PIN_11
+//#define EXT3_PIN_I2C_SCL          EXT3_PIN_12
+//#define EXT3_PIN_GPIO_2           EXT3_PIN_15
+//#define EXT3_PIN_SPI_MOSI         EXT3_PIN_16
+//#define EXT3_PIN_SPI_MISO         EXT3_PIN_17
+//#define EXT3_PIN_SPI_SCK          EXT3_PIN_18
 /** @} */
 
 /** \name Extension header #3 SPI definitions
@@ -300,12 +300,12 @@ void system_board_init(void);
 /** \name Extension header #3 Dataflash
  *  @{
  */
-#define EXT3_DATAFLASH_SPI_MODULE      EXT3_SPI_MODULE
-#define EXT3_DATAFLASH_SPI_MUX_SETTING EXT3_SPI_SERCOM_MUX_SETTING
-#define EXT3_DATAFLASH_SPI_PINMUX_PAD0 EXT3_SPI_SERCOM_PINMUX_PAD0
-#define EXT3_DATAFLASH_SPI_PINMUX_PAD1 EXT3_SPI_SERCOM_PINMUX_PAD1
-#define EXT3_DATAFLASH_SPI_PINMUX_PAD2 EXT3_SPI_SERCOM_PINMUX_PAD2
-#define EXT3_DATAFLASH_SPI_PINMUX_PAD3 EXT3_SPI_SERCOM_PINMUX_PAD3
+//#define EXT3_DATAFLASH_SPI_MODULE      EXT3_SPI_MODULE
+//#define EXT3_DATAFLASH_SPI_MUX_SETTING EXT3_SPI_SERCOM_MUX_SETTING
+//#define EXT3_DATAFLASH_SPI_PINMUX_PAD0 EXT3_SPI_SERCOM_PINMUX_PAD0
+//#define EXT3_DATAFLASH_SPI_PINMUX_PAD1 EXT3_SPI_SERCOM_PINMUX_PAD1
+//#define EXT3_DATAFLASH_SPI_PINMUX_PAD2 EXT3_SPI_SERCOM_PINMUX_PAD2
+//#define EXT3_DATAFLASH_SPI_PINMUX_PAD3 EXT3_SPI_SERCOM_PINMUX_PAD3
 /** @} */
 
 /** \name USB definitions
@@ -332,62 +332,62 @@ void system_board_init(void);
 /** \name Embedded debugger GPIO interface definitions
  * @{
  */
-#define EDBG_GPIO0_PIN            PIN_PA08
-#define EDBG_GPIO1_PIN            PIN_PA09
-#define EDBG_GPIO2_PIN            PIN_PA12
-#define EDBG_GPIO3_PIN            PIN_PA14
-/** @} */
-
-/** \name Embedded debugger USART interface definitions
- * @{
- */
-#define EDBG_UART_MODULE          -1 /* Not available on this board */
-#define EDBG_UART_RX_PIN          -1 /* Not available on this board */
-#define EDBG_UART_RX_MUX          -1 /* Not available on this board */
-#define EDBG_UART_RX_PINMUX       -1 /* Not available on this board */
-#define EDBG_UART_RX_SERCOM_PAD   -1 /* Not available on this board */
-#define EDBG_UART_TX_PIN          -1 /* Not available on this board */
-#define EDBG_UART_TX_MUX          -1 /* Not available on this board */
-#define EDBG_UART_TX_PINMUX       -1 /* Not available on this board */
-#define EDBG_UART_TX_SERCOM_PAD   -1 /* Not available on this board */
+//#define EDBG_GPIO0_PIN            PIN_PA08
+//#define EDBG_GPIO1_PIN            PIN_PA09
+//#define EDBG_GPIO2_PIN            PIN_PA12
+//#define EDBG_GPIO3_PIN            PIN_PA14
+///** @} */
+//
+///** \name Embedded debugger USART interface definitions
+ //* @{
+ //*/
+//#define EDBG_UART_MODULE          -1 /* Not available on this board */
+//#define EDBG_UART_RX_PIN          -1 /* Not available on this board */
+//#define EDBG_UART_RX_MUX          -1 /* Not available on this board */
+//#define EDBG_UART_RX_PINMUX       -1 /* Not available on this board */
+//#define EDBG_UART_RX_SERCOM_PAD   -1 /* Not available on this board */
+//#define EDBG_UART_TX_PIN          -1 /* Not available on this board */
+//#define EDBG_UART_TX_MUX          -1 /* Not available on this board */
+//#define EDBG_UART_TX_PINMUX       -1 /* Not available on this board */
+//#define EDBG_UART_TX_SERCOM_PAD   -1 /* Not available on this board */
 /** @} */
 
 /** \name Embedded debugger I2C interface definitions
  * @{
  */
-#define EDBG_I2C_MODULE              SERCOM1
-#define EDBG_I2C_SERCOM_PINMUX_PAD0  PINMUX_PA16C_SERCOM1_PAD0
-#define EDBG_I2C_SERCOM_PINMUX_PAD1  PINMUX_PA17C_SERCOM1_PAD1
-#define EDBG_I2C_SERCOM_DMAC_ID_TX   SERCOM1_DMAC_ID_TX
-#define EDBG_I2C_SERCOM_DMAC_ID_RX   SERCOM1_DMAC_ID_RX
-/** @} */
-
-/** \name Embedded debugger SPI interface definitions
- * @{
- */
-#define EDBG_SPI_SLAVE_SELECT_PIN    PIN_PA27
-#define EDBG_SPI_MODULE              SERCOM5
-#define EDBG_SPI_SERCOM_MUX_SETTING  SPI_SIGNAL_MUX_SETTING_E
-#define EDBG_SPI_SERCOM_PINMUX_PAD0  PINMUX_PB02D_SERCOM5_PAD0
-#define EDBG_SPI_SERCOM_PINMUX_PAD1  PINMUX_UNUSED
-#define EDBG_SPI_SERCOM_PINMUX_PAD2  PINMUX_PB22D_SERCOM5_PAD2
-#define EDBG_SPI_SERCOM_PINMUX_PAD3  PINMUX_PB23D_SERCOM5_PAD3
-#define EDBG_SPI_SERCOM_DMAC_ID_TX   SERCOM5_DMAC_ID_TX
-#define EDBG_SPI_SERCOM_DMAC_ID_RX   SERCOM5_DMAC_ID_RX
-/** @} */
-
-/** \name Embedded debugger CDC Gateway USART interface definitions
- * @{
- */
-#define EDBG_CDC_MODULE              SERCOM0
-#define EDBG_CDC_SERCOM_MUX_SETTING  USART_RX_1_TX_0_XCK_1
-#define EDBG_CDC_SERCOM_PINMUX_PAD0  PINMUX_UNUSED
-#define EDBG_CDC_SERCOM_PINMUX_PAD1  PINMUX_UNUSED
-#define EDBG_CDC_SERCOM_PINMUX_PAD2  PINMUX_PA06D_SERCOM0_PAD2
-#define EDBG_CDC_SERCOM_PINMUX_PAD3  PINMUX_PA07D_SERCOM0_PAD3
-#define EDBG_CDC_SERCOM_DMAC_ID_TX   SERCOM0_DMAC_ID_TX
-#define EDBG_CDC_SERCOM_DMAC_ID_RX   SERCOM0_DMAC_ID_RX
-/** @} */
+//#define EDBG_I2C_MODULE              SERCOM1
+//#define EDBG_I2C_SERCOM_PINMUX_PAD0  PINMUX_PA16C_SERCOM1_PAD0
+//#define EDBG_I2C_SERCOM_PINMUX_PAD1  PINMUX_PA17C_SERCOM1_PAD1
+//#define EDBG_I2C_SERCOM_DMAC_ID_TX   SERCOM1_DMAC_ID_TX
+//#define EDBG_I2C_SERCOM_DMAC_ID_RX   SERCOM1_DMAC_ID_RX
+///** @} */
+//
+///** \name Embedded debugger SPI interface definitions
+ //* @{
+ //*/
+//#define EDBG_SPI_SLAVE_SELECT_PIN    PIN_PA27
+//#define EDBG_SPI_MODULE              SERCOM5
+//#define EDBG_SPI_SERCOM_MUX_SETTING  SPI_SIGNAL_MUX_SETTING_E
+//#define EDBG_SPI_SERCOM_PINMUX_PAD0  PINMUX_PB02D_SERCOM5_PAD0
+//#define EDBG_SPI_SERCOM_PINMUX_PAD1  PINMUX_UNUSED
+//#define EDBG_SPI_SERCOM_PINMUX_PAD2  PINMUX_PB22D_SERCOM5_PAD2
+//#define EDBG_SPI_SERCOM_PINMUX_PAD3  PINMUX_PB23D_SERCOM5_PAD3
+//#define EDBG_SPI_SERCOM_DMAC_ID_TX   SERCOM5_DMAC_ID_TX
+//#define EDBG_SPI_SERCOM_DMAC_ID_RX   SERCOM5_DMAC_ID_RX
+///** @} */
+//
+///** \name Embedded debugger CDC Gateway USART interface definitions
+ //* @{
+ //*/
+//#define EDBG_CDC_MODULE              SERCOM0
+//#define EDBG_CDC_SERCOM_MUX_SETTING  USART_RX_1_TX_0_XCK_1
+//#define EDBG_CDC_SERCOM_PINMUX_PAD0  PINMUX_UNUSED
+//#define EDBG_CDC_SERCOM_PINMUX_PAD1  PINMUX_UNUSED
+//#define EDBG_CDC_SERCOM_PINMUX_PAD2  PINMUX_PA06D_SERCOM0_PAD2
+//#define EDBG_CDC_SERCOM_PINMUX_PAD3  PINMUX_PA07D_SERCOM0_PAD3
+//#define EDBG_CDC_SERCOM_DMAC_ID_TX   SERCOM0_DMAC_ID_TX
+//#define EDBG_CDC_SERCOM_DMAC_ID_RX   SERCOM0_DMAC_ID_RX
+///** @} */
 
 #define RF_SPI_MODULE              SERCOM4
 #define RF_SPI_SERCOM_MUX_SETTING  SPI_SIGNAL_MUX_SETTING_E
@@ -481,6 +481,9 @@ void system_board_init(void);
  * \note The pins of the specified LEDs are set to GPIO output mode.
  */
 #define LED_Toggle(led_gpio)  port_pin_toggle_output_level(led_gpio)
+#define LED_Init(led_gpio) port_pin_toggle_output_level(led_gpio)
+
+
 
 
 

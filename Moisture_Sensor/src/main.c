@@ -33,18 +33,22 @@ extern void wsndemo_init(void);
 extern void wsndemo_task(void);
 
 
+
 int main (void)
 {
-	/* Configure device and enable. */
-	system_init();
 
+	/* Configure device and enable. */
+
+	system_init();
+	
 	delay_init();	
 	
-	//stdio_usb_init();
 	wsndemo_init();
 	
 	while (1)
 	{
-		wsndemo_task();
+	
+	wsndemo_task();
 	}
 }
+

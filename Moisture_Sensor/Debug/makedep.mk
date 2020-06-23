@@ -10,8 +10,6 @@ src\ASF\common\services\usb\class\cdc\device\udi_cdc_desc.c
 
 src\ASF\common\services\usb\udc\udc.c
 
-src\ASF\common\utils\stdio\stdio_usb\stdio_usb.c
-
 src\ASF\sam0\drivers\adc\adc_sam_d_r_h\adc.c
 
 src\ASF\sam0\drivers\rtc\rtc_sam_d_r_h\rtc_count.c

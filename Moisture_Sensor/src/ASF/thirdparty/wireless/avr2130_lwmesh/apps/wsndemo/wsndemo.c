@@ -72,13 +72,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include "user_board.h"
 #include "config.h"
 #include "sys.h"
 #include "phy.h"
 #include "sys.h"
 #include "nwk.h"
 #include "sysTimer.h"
-#if APP_ENDDEVICE
+#if APP_ROUTER || APP_ENDDEVICE
 #include "sleep_mgr.h"
 #if HTU21D_Enable
 #include "i2c.h"
@@ -90,8 +91,13 @@
 #endif
 #include "commands.h"
 #if APP_COORDINATOR
+#if !SIO2USB
 #include "sio2host.h"
+#else
 #include "stdio_usb.h"
+uint16_t unused;
+#define sio2host_putchar(data) stdio_usb_putchar(unused,data)
+#endif
 #endif
 #if SAMD || SAMR21 || SAML21
 #include "system.h"
@@ -131,7 +137,6 @@ typedef struct  AppMessage_t {
 		uint8_t size;
 		int32_t battery;
 		int32_t temperature;
-		int32_t light;
 		int32_t moisture;
 		int32_t humidity;
 	} sensors;
@@ -143,20 +148,9 @@ typedef struct  AppMessage_t {
 	} caption;
 } AppMessage_t;
 
-typedef enum AppState_t {
-	APP_STATE_INITIAL,
-	APP_STATE_SEND,
-	APP_STATE_WAIT_CONF,
-	APP_STATE_SENDING_DONE,
-	APP_STATE_WAIT_SEND_TIMER,
-	APP_STATE_WAIT_COMMAND_TIMER,
-	APP_STATE_PREPARE_TO_SLEEP,
-	APP_STATE_SLEEP,
-	APP_STATE_WAKEUP,
-} AppState_t;
+
 COMPILER_PACK_RESET()
-/*- Variables --------------------------------------------------------------*/
-static AppState_t appState = APP_STATE_INITIAL;
+
 
 #if APP_ROUTER || APP_ENDDEVICE
 static NWK_DataReq_t appNwkDataReq;
@@ -317,7 +311,7 @@ static void appSendData(void)
 #else
 	appMsg.parentShortAddr = 0;
 #endif
-#if APP_ENDDEVICE
+#if APP_ROUTER || APP_ENDDEVICE
 
 	if (HTU21D_Valid){
     float temp = HTU21D_readTemperature();
@@ -327,16 +321,20 @@ static void appSendData(void)
 	}
 	
 else
-	{appMsg.sensors.temperature = rand() & 0xffff;
-	appMsg.sensors.humidity	   = rand() & 0xffff;
+	{appMsg.sensors.temperature =  0xffff;
+	appMsg.sensors.humidity	   =  0xffff;
 	}
-	//uint16_t battery =  bat_adc_read();
-	//appMsg.sensors.battery     = battery;//rand() & 0xffff;
-	//appMsg.sensors.light       = rand() & 0xff;
+	
 	
 	uint16_t moisture =moist_adc_read();
 	appMsg.sensors.moisture =moisture;
-	
+	uint16_t bat =bat_adc_read();
+	appMsg.sensors.battery =bat;
+	//uint16_t light =light_adc_read();
+	//appMsg.sensors.light =light;
+	//uint16_t ph =ph_adc_read();
+	//appMsg.sensors.ph =ph;
+	LED_Toggle(LED_DATA);
 	
 #endif
 
@@ -379,10 +377,10 @@ static void appInit(void)
 	appMsg.rssi                 = 0;
 
 	appMsg.sensors.type        = 1;
-	appMsg.sensors.size        = sizeof(int32_t) * 3;
+	appMsg.sensors.size        = sizeof(int32_t) * 4;
 	appMsg.sensors.battery     = 0;
 	appMsg.sensors.temperature = 0;
-	appMsg.sensors.light       = 0;
+	//appMsg.sensors.light       = 0;
 	appMsg.sensors.humidity		= 0;
 	appMsg.sensors.moisture      = 0;
 
@@ -408,7 +406,13 @@ static void appInit(void)
 	appDataSendingTimer.interval = APP_SENDING_INTERVAL;
 	appDataSendingTimer.mode = SYS_TIMER_INTERVAL_MODE;
 	appDataSendingTimer.handler = appDataSendingTimerHandler;
-
+#if (LED_DATA)
+	LED_Init(LED_DATA);
+#define LED_COUNT 1
+#endif
+#if LED_NETWORK
+	LED_Init(LED_NETWORK);
+#endif
 #if APP_ROUTER || APP_ENDDEVICE
 	appNetworkStatus = false;
 	appNetworkStatusTimer.interval = 500;
@@ -421,6 +425,7 @@ static void appInit(void)
 	appCommandWaitTimer.handler = appCommandWaitTimerHandler;
 #else
 #if (LED_COUNT > 0)
+	
 	LED_On(LED_NETWORK);
 #endif
 #endif
@@ -498,9 +503,18 @@ static void APP_TaskHandler(void)
 
 #if (APP_COORDINATOR)
 	uint16_t bytes;
+#if !SIO2USB
 	if ((bytes = sio2host_rx(rx_data, APP_RX_BUF_SIZE)) > 0) {
 		UartBytesReceived(bytes, (uint8_t *)&rx_data);
 	}
+#else
+	uint16_t unused;
+	stdio_usb_getchar(unused,bytes);
+	if (bytes != 0)
+	{
+		UartBytesReceived(bytes, (uint8_t *)&rx_data);
+	}
+#endif
 #endif
 }
 
@@ -512,8 +526,9 @@ static void APP_TaskHandler(void)
  */
 void wsndemo_init(void)
 {
+	
 	SYS_Init();
-#if APP_ENDDEVICE
+#if APP_ROUTER || APP_ENDDEVICE
 	sm_init();
 	configure_adc_averaging();
 #if HTU21D_Enable
@@ -523,8 +538,13 @@ void wsndemo_init(void)
 
 #endif
 #if APP_COORDINATOR
-	//stdio_usb_init(void)
+#if !SIO2USB
 	sio2host_init();
+#else
+	stdio_usb_init();
+	stdio_usb_enable();
+#endif
+
 #endif
 }
 

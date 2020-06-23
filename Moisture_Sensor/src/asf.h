@@ -150,9 +150,6 @@
 // From module: USB Device CDC (Single Interface Device)
 #include <udi_cdc.h>
 
-// From module: USB Device CDC Standard I/O (stdio) - SAM0 implementation
-#include <stdio_usb.h>
-
 // From module: USB Device Stack Core (Common API)
 #include <udc.h>
 #include <udd.h>

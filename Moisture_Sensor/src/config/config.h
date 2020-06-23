@@ -42,9 +42,7 @@
 
 /*****************************************************************************
 *****************************************************************************/
-
-
-#define APP_ADDR                0x8001
+#define APP_ADDR                0
 #define APP_PANID               0x1234
 #define APP_SENDING_INTERVAL    2000
 #define APP_ENDPOINT            1
@@ -83,6 +81,7 @@
 #define APP_ROUTER      0
 #define APP_ENDDEVICE   0
 #elif APP_ADDR < 0x8000
+#define HTU21D_Enable   1
 #define APP_CAPTION     "Router"
 #define APP_NODE_TYPE   1
 #define APP_COORDINATOR 0
@@ -90,11 +89,11 @@
 #define APP_ENDDEVICE   0
 #else
 #define APP_CAPTION     "End Device"
+#define HTU21D_Enable   1
 #define APP_NODE_TYPE   2
 #define APP_COORDINATOR 0
 #define APP_ROUTER      0
 #define APP_ENDDEVICE   1
-#define HTU21D_Enable   1
 #endif
 
 #endif /* _CONFIG_H_ */
